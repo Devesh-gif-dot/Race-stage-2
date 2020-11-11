@@ -70,6 +70,19 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
+          if(index === 0){
+            fill(random('red','green','blue','black'));
+          }
+          if(index === 1){
+            fill(random('red','green','blue','black'));
+          }
+          if(index === 2){
+            fill(random('red','green','blue','black'));
+          }
+          if(index === 3){
+            fill(random('red','green','blue','black'));
+          }
+          ellipse(x,y,60,60);
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
@@ -86,7 +99,7 @@ class Game {
       player.update();
     }
 
-    if(player.distance > 3860){
+    if(player.distance > 4100){
       gameState = 2;
     }
    
@@ -95,5 +108,8 @@ class Game {
 
   end(){
     console.log("Game Ended");
+    camera.position.x=0; camera.position.y =0; 
+    textSize(70);
+    text("GAME OVER",0,85);
   }
 }
